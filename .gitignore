@@ -1,0 +1,11 @@
+/build
+/.idea
+
+buildlog.txt
+dslog.txt
+*.fmu
+*.mat
+dsfinal.txt
+dymosim.exe
+dsin.txt
+~FMUOutput

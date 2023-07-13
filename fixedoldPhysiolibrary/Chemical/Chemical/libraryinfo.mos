@@ -1,0 +1,12 @@
+LibraryInfoMenuSeparator(
+	category = "libraries",
+	pos = 3000);
+LibraryInfoMenuCommand(
+    category = "libraries",
+    text = "Chemical",
+    reference = "Chemical",
+    isModel = true,
+    description = "Physical Chemistry 1.4.0",
+    version = "1.4.0",
+    ModelicaVersion = ">=4.0",
+    pos = 3754);
