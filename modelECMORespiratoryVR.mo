@@ -4,7 +4,7 @@ package modelECMORespiratoryVR
   model ECMOSimReg
     //Typy přenosového media
         replaceable package Blood =
-          Physiolibrary.Media.BloodBySiggaardAndersen annotation(choicesAllMatching=True);
+          Physiolibrary.Media.Blood                   annotation(choicesAllMatching=True);
       replaceable package Air =
           Physiolibrary.Media.Air annotation(choicesAllMatching=True);
 
@@ -75,7 +75,7 @@ package modelECMORespiratoryVR
           rotation=180,
           origin={-220,-164})));
     Physiolibrary.Fluid.Components.ElasticVessel Tissue(
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen,
+      redeclare package Medium = Physiolibrary.Media.Blood,
       useSubstances=true,
       volume_start(displayUnit="l") = 0.0003,
       useThermalPort=true,
@@ -105,29 +105,29 @@ package modelECMORespiratoryVR
     Physiolibrary.Fluid.Sensors.PartialPressure pO2_tissue(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.Oxygen_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
+      redeclare package Medium = Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{-276,-260},{-256,-280}})));
     Physiolibrary.Fluid.Sensors.PartialPressure pCO2_tissue(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.CarbonDioxide_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
-      annotation (Placement(transformation(
+      redeclare package Medium = Physiolibrary.Media.Blood) annotation (
+        Placement(transformation(
           extent={{10,10},{-10,-10}},
           rotation=0,
           origin={-118,-270})));
     Physiolibrary.Fluid.Sensors.PartialPressure pCO2Arteries(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.CarbonDioxide_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
-      annotation (Placement(transformation(
+      redeclare package Medium = Physiolibrary.Media.Blood) annotation (
+        Placement(transformation(
           extent={{-10,10},{10,-10}},
           rotation=180,
           origin={-74,-144})));
     Physiolibrary.Fluid.Sensors.PartialPressure pO2Arteries(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.Oxygen_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
-      annotation (Placement(transformation(
+      redeclare package Medium = Physiolibrary.Media.Blood) annotation (
+        Placement(transformation(
           extent={{-10,10},{10,-10}},
           rotation=180,
           origin={-76,-190})));
@@ -245,13 +245,13 @@ package modelECMORespiratoryVR
     Physiolibrary.Fluid.Sensors.PartialPressure pO2Veins(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.Oxygen_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
+      redeclare package Medium = Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{-338,-174},{-318,-194}})));
     Physiolibrary.Fluid.Sensors.PartialPressure pCO2Veins(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.CarbonDioxide_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
-      annotation (Placement(transformation(
+      redeclare package Medium = Physiolibrary.Media.Blood) annotation (
+        Placement(transformation(
           extent={{-10,10},{10,-10}},
           rotation=0,
           origin={-320,-138})));
@@ -300,12 +300,12 @@ package modelECMORespiratoryVR
           rotation=0,
           origin={102,116})));
     Physiolibrary.Fluid.Components.VolumePump volumePump(
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen,
+      redeclare package Medium = Physiolibrary.Media.Blood,
       useSolutionFlowInput=true,
       SolutionFlow=0)
       annotation (Placement(transformation(extent={{-202,-66},{-222,-46}})));
     Physiolibrary.Fluid.Components.VolumePump volumePump1(
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen,
+      redeclare package Medium = Physiolibrary.Media.Blood,
       useSolutionFlowInput=true,
       SolutionFlow(displayUnit="l/min"))
       annotation (Placement(transformation(extent={{-54,-66},{-34,-46}})));
@@ -382,7 +382,7 @@ package modelECMORespiratoryVR
           rotation=180,
           origin={204,182})));
     Physiolibrary.Fluid.Sensors.pH pH_Arteries(redeclare package Medium =
-          Physiolibrary.Media.BloodBySiggaardAndersen)
+          Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{-190,-142},{-170,-122}})));
     Modelica.Blocks.Math.Min min1
       annotation (Placement(transformation(extent={{340,128},{320,148}})));
@@ -475,13 +475,13 @@ package modelECMORespiratoryVR
     Physiolibrary.Fluid.Sensors.PartialPressure pO2Lungs(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.Oxygen_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
+      redeclare package Medium = Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{-294,562},{-274,582}})));
     Physiolibrary.Fluid.Sensors.PartialPressure pCO2Lungs(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.CarbonDioxide_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
-      annotation (Placement(transformation(
+      redeclare package Medium = Physiolibrary.Media.Blood) annotation (
+        Placement(transformation(
           extent={{10,-10},{-10,10}},
           rotation=0,
           origin={-136,574})));
@@ -494,7 +494,7 @@ package modelECMORespiratoryVR
           Blood, Conductance=C_cirkulation*8)
       annotation (Placement(transformation(extent={{-106,464},{-86,484}})));
     Physiolibrary.Fluid.Components.ElasticVessel LungCapilars(
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen,
+      redeclare package Medium = Physiolibrary.Media.Blood,
       useSubstances=true,
       volume_start(displayUnit="l") = 0.00015,
       Compliance(displayUnit="ml/mmHg") = 3.0002463033826e-08,
@@ -510,7 +510,7 @@ package modelECMORespiratoryVR
         package Medium = Physiolibrary.Media.Air)
       annotation (Placement(transformation(extent={{-42,608},{-22,628}})));
     Physiolibrary.Fluid.Sensors.pH pH_Veins(redeclare package Medium =
-          Physiolibrary.Media.BloodBySiggaardAndersen)
+          Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{-218,-138},{-238,-118}})));
     Physiolibrary.Fluid.Sensors.FlowMeasure flowMeasureSweep(redeclare package
         Medium = Physiolibrary.Media.Air) annotation (Placement(transformation(
@@ -533,10 +533,10 @@ package modelECMORespiratoryVR
           displayUnit="l/min") = 0)
       annotation (Placement(transformation(extent={{-112,50},{-120,58}})));
     Physiolibrary.Fluid.Sensors.pH pH_LungA(redeclare package Medium =
-          Physiolibrary.Media.BloodBySiggaardAndersen)
+          Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{-420,432},{-400,452}})));
     Physiolibrary.Fluid.Sensors.pH pH_LungV(redeclare package Medium =
-          Physiolibrary.Media.BloodBySiggaardAndersen)
+          Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{86,430},{66,450}})));
     Modelica.Blocks.Math.Product product11
                                           annotation (Placement(transformation(
@@ -581,7 +581,7 @@ package modelECMORespiratoryVR
         points={{-170,-164},{-170,-248.1},{-191.3,-248.1}},
         color={127,0,0},
         thickness=0.5));
-    connect(PressureCapilarsTissue.q_in, Tissue.q_in[3]) annotation (Line(
+    connect(PressureCapilarsTissue.port, Tissue.q_in[3]) annotation (Line(
         points={{-268,-234},{-190.433,-234},{-190.433,-248.1}},
         color={127,0,0},
         thickness=0.5));
@@ -589,13 +589,12 @@ package modelECMORespiratoryVR
             -300},{-190,-300},{-190,-258}}, color={158,66,200}));
     connect(O2_left.port_a, pO2_tissue.port_a) annotation (Line(points={{-256,-300},
             {-234,-300},{-234,-270},{-256,-270}}, color={158,66,200}));
-    connect(pO2_tissue.referenceFluidPort, Tissue.q_in[4]) annotation (Line(
-        points={{-266,-260.2},{-266,-248},{-212,-248},{-212,-248.1},{-189.567,
-            -248.1}},
+    connect(pO2_tissue.port, Tissue.q_in[4]) annotation (Line(
+        points={{-266,-260.2},{-266,-248},{-212,-248},{-212,-248.1},{-189.567,-248.1}},
         color={127,0,0},
         thickness=0.5));
 
-    connect(pCO2_tissue.referenceFluidPort, Tissue.q_in[5]) annotation (Line(
+    connect(pCO2_tissue.port, Tissue.q_in[5]) annotation (Line(
         points={{-118,-260.2},{-118,-248.1},{-188.7,-248.1}},
         color={127,0,0},
         thickness=0.5));
@@ -610,11 +609,11 @@ package modelECMORespiratoryVR
     connect(pO2Arteries.port_a, Arteries.substances[2]) annotation (Line(points={{-86,
             -190},{-116,-190},{-116,-159}},
                                          color={158,66,200}));
-    connect(pO2Arteries.referenceFluidPort, Arteries.q_in[2]) annotation (Line(
+    connect(pO2Arteries.port, Arteries.q_in[2]) annotation (Line(
         points={{-76,-199.8},{-125.9,-199.8},{-125.9,-157.366}},
         color={127,0,0},
         thickness=0.5));
-    connect(pCO2Arteries.referenceFluidPort, Arteries.q_in[3]) annotation (Line(
+    connect(pCO2Arteries.port, Arteries.q_in[3]) annotation (Line(
         points={{-74,-153.8},{-74,-158.183},{-125.9,-158.183}},
         color={127,0,0},
         thickness=0.5));
@@ -630,11 +629,11 @@ package modelECMORespiratoryVR
         color={191,0,0},
         thickness=0.5));
 
-    connect(PressureVeins.q_in, Veins.q_in[2]) annotation (Line(
+    connect(PressureVeins.port, Veins.q_in[2]) annotation (Line(
         points={{-380,-212},{-250,-212},{-250,-160.514},{-256.1,-160.514}},
         color={127,0,0},
         thickness=0.5));
-    connect(pressureECMOAirTube.q_in, ECMOAirTube.q_in[1]) annotation (Line(
+    connect(pressureECMOAirTube.port, ECMOAirTube.q_in[1]) annotation (Line(
         points={{-140,206},{-188.05,206},{-188.05,183.9}},
         color={127,0,0},
         thickness=0.5));
@@ -722,7 +721,7 @@ package modelECMORespiratoryVR
       annotation (Line(points={{42,110},{90,110}},   color={0,0,127}));
     connect(product1.y, heartLeft.solutionFlow) annotation (Line(points={{113,116},
             {122,116},{122,-6},{15,-6}},  color={0,0,127}));
-    connect(pressureLungsVein.q_in, LungsVeins.q_in[3]) annotation (Line(
+    connect(pressureLungsVein.port, LungsVeins.q_in[3]) annotation (Line(
         points={{32,108},{32,88},{12.1,88},{12.1,440}},
         color={127,0,0},
         thickness=0.5));
@@ -732,7 +731,7 @@ package modelECMORespiratoryVR
                                                color={0,0,127}));
     connect(product4.y, volumePump.solutionFlow) annotation (Line(points={{-203,
             -24},{-212,-24},{-212,-49}},              color={0,0,127}));
-    connect(pressureArterial.q_in, Arteries.q_in[5]) annotation (Line(
+    connect(pressureArterial.port, Arteries.q_in[5]) annotation (Line(
         points={{-118,-224},{-126,-224},{-126,-159.817},{-125.9,-159.817}},
         color={127,0,0},
         thickness=0.5));
@@ -740,7 +739,7 @@ package modelECMORespiratoryVR
       annotation (Line(points={{-65,38},{-38,38},{-38,-16}}, color={0,0,127}));
     connect(product3.y, volumePump1.solutionFlow)
       annotation (Line(points={{-44,-39},{-44,-49}}, color={0,0,127}));
-    connect(pressureOxygenator.q_in, ECMOBloodTube.q_in[1]) annotation (Line(
+    connect(pressureOxygenator.port, ECMOBloodTube.q_in[1]) annotation (Line(
         points={{-156,140},{-156,102.1},{-191.95,102.1}},
         color={127,0,0},
         thickness=0.5));
@@ -785,7 +784,7 @@ package modelECMORespiratoryVR
     connect(DeadSpace.solutionFlow, product6.y) annotation (Line(points={{-194,
             689},{-194,724},{178,724},{178,182},{193,182}},
                                                   color={0,0,127}));
-    connect(pH_Arteries.referenceFluidPort, Arteries.q_in[6]) annotation (Line(
+    connect(pH_Arteries.port, Arteries.q_in[6]) annotation (Line(
         points={{-180,-141.8},{-180,-176},{-125.9,-176},{-125.9,-160.634}},
         color={127,0,0},
         thickness=0.5));
@@ -803,13 +802,12 @@ package modelECMORespiratoryVR
     connect(ECMOFlowIntercept.y, add1.u1) annotation (Line(points={{-317,-10},{
             -288,-10},{-288,48},{-260,48}},
                                         color={0,0,127}));
-    connect(pCO2Veins.referenceFluidPort, Veins.q_in[4]) annotation (Line(
+    connect(pCO2Veins.port, Veins.q_in[4]) annotation (Line(
         points={{-320,-128.2},{-272,-128.2},{-272,-162},{-256.1,-162}},
         color={127,0,0},
         thickness=0.5));
-    connect(pO2Veins.referenceFluidPort, Veins.q_in[5]) annotation (Line(
-        points={{-328,-174.2},{-320,-174.2},{-320,-170},{-256.1,-170},{-256.1,
-            -162.743}},
+    connect(pO2Veins.port, Veins.q_in[5]) annotation (Line(
+        points={{-328,-174.2},{-320,-174.2},{-320,-170},{-256.1,-170},{-256.1,-162.743}},
         color={127,0,0},
         thickness=0.5));
 
@@ -868,7 +866,7 @@ package modelECMORespiratoryVR
             584}},                           color={158,66,200}));
     connect(Alveoly.substances[2],CO2. gas_port) annotation (Line(points={{-212,
             606},{-212,588},{-192,588}},   color={158,66,200}));
-    connect(pressureCapilarsLungs.q_in, LungCapilars.q_in[1]) annotation (Line(
+    connect(pressureCapilarsLungs.port, LungCapilars.q_in[1]) annotation (Line(
         points={{-106,540},{-106,520},{-136,520},{-136,496},{-192,496},{-192,
             512},{-196.05,512},{-196.05,530.1}},
         color={127,0,0},
@@ -877,15 +875,14 @@ package modelECMORespiratoryVR
            {{-230,564},{-230,512},{-198,512},{-198,540}}, color={158,66,200}));
     connect(CO2.liquid_port, LungCapilars.substances[3]) annotation (Line(
           points={{-192,568},{-198,568},{-198,540}}, color={158,66,200}));
-    connect(pO2Lungs.referenceFluidPort, LungCapilars.q_in[2]) annotation (Line(
-        points={{-284,562.2},{-284,496},{-192,496},{-192,512},{-197.35,512},{
-            -197.35,530.1}},
+    connect(pO2Lungs.port, LungCapilars.q_in[2]) annotation (Line(
+        points={{-284,562.2},{-284,496},{-192,496},{-192,512},{-197.35,512},{-197.35,
+            530.1}},
         color={127,0,0},
         thickness=0.5));
-    connect(pCO2Lungs.referenceFluidPort, LungCapilars.q_in[2]) annotation (
-        Line(
-        points={{-136,564.2},{-136,496},{-192,496},{-192,512},{-197.35,512},{
-            -197.35,530.1}},
+    connect(pCO2Lungs.port, LungCapilars.q_in[2]) annotation (Line(
+        points={{-136,564.2},{-136,496},{-192,496},{-192,512},{-197.35,512},{-197.35,
+            530.1}},
         color={127,0,0},
         thickness=0.5));
 
@@ -918,14 +915,14 @@ package modelECMORespiratoryVR
         color={127,0,0},
         thickness=0.5));
 
-    connect(pressureAlveols.q_in, Alveoly.q_in[2]) annotation (Line(
+    connect(pressureAlveols.port, Alveoly.q_in[2]) annotation (Line(
         points={{-36,612},{-212,612},{-212,615.9}},
         color={127,0,0},
         thickness=0.5));
     connect(pH_Arteries.port_a, Arteries.substances[13]) annotation (Line(
           points={{-170,-132},{-116,-132},{-116,-159}},
           color={158,66,200}));
-    connect(pH_Veins.referenceFluidPort, Veins.q_in[6]) annotation (Line(
+    connect(pH_Veins.port, Veins.q_in[6]) annotation (Line(
         points={{-228,-137.8},{-228,-146},{-256.1,-146},{-256.1,-163.486}},
         color={127,0,0},
         thickness=0.5));
@@ -949,14 +946,13 @@ package modelECMORespiratoryVR
         color={127,0,0},
         thickness=0.5));
 
-    connect(pH_LungA.referenceFluidPort, LungsArteries.q_in[4]) annotation (
-        Line(
-        points={{-410,432.2},{-410,408},{-372,408},{-372,424},{-372.1,424},{
-            -372.1,440.96}},
+    connect(pH_LungA.port, LungsArteries.q_in[4]) annotation (Line(
+        points={{-410,432.2},{-410,408},{-372,408},{-372,424},{-372.1,424},{-372.1,
+            440.96}},
         color={127,0,0},
         thickness=0.5));
 
-    connect(pH_LungV.referenceFluidPort, LungsVeins.q_in[5]) annotation (Line(
+    connect(pH_LungV.port, LungsVeins.q_in[5]) annotation (Line(
         points={{76,430.2},{76,414},{12,414},{12,424},{12.1,424},{12.1,437.92}},
         color={127,0,0},
         thickness=0.5));
@@ -1019,7 +1015,7 @@ package modelECMORespiratoryVR
         points={{-34,-56},{-18,-56},{-18,-161.451},{-125.9,-161.451}},
         color={127,0,0},
         thickness=0.5));
-    connect(PressureVeins1.q_in, LungsArteries.q_in[5]) annotation (Line(
+    connect(PressureVeins1.port, LungsArteries.q_in[5]) annotation (Line(
         points={{-372,508},{-372,458},{-372.1,458},{-372.1,439.92}},
         color={127,0,0},
         thickness=0.5));
@@ -1079,7 +1075,7 @@ package modelECMORespiratoryVR
   model ECMOSimNoReg
     //Typy přenosového media
         replaceable package Blood =
-          Physiolibrary.Media.BloodBySiggaardAndersen annotation(choicesAllMatching=True);
+          Physiolibrary.Media.Blood                   annotation(choicesAllMatching=True);
       replaceable package Air =
           Physiolibrary.Media.Air annotation(choicesAllMatching=True);
 
@@ -1150,7 +1146,7 @@ package modelECMORespiratoryVR
           rotation=180,
           origin={-220,-164})));
     Physiolibrary.Fluid.Components.ElasticVessel Tissue(
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen,
+      redeclare package Medium = Physiolibrary.Media.Blood,
       useSubstances=true,
       volume_start(displayUnit="l") = 0.0003,
       useThermalPort=true,
@@ -1180,29 +1176,29 @@ package modelECMORespiratoryVR
     Physiolibrary.Fluid.Sensors.PartialPressure pO2_tissue(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.Oxygen_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
+      redeclare package Medium = Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{-276,-260},{-256,-280}})));
     Physiolibrary.Fluid.Sensors.PartialPressure pCO2_tissue(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.CarbonDioxide_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
-      annotation (Placement(transformation(
+      redeclare package Medium = Physiolibrary.Media.Blood) annotation (
+        Placement(transformation(
           extent={{10,10},{-10,-10}},
           rotation=0,
           origin={-118,-270})));
     Physiolibrary.Fluid.Sensors.PartialPressure pCO2Arteries(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.CarbonDioxide_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
-      annotation (Placement(transformation(
+      redeclare package Medium = Physiolibrary.Media.Blood) annotation (
+        Placement(transformation(
           extent={{-10,10},{10,-10}},
           rotation=180,
           origin={-74,-144})));
     Physiolibrary.Fluid.Sensors.PartialPressure pO2Arteries(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.Oxygen_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
-      annotation (Placement(transformation(
+      redeclare package Medium = Physiolibrary.Media.Blood) annotation (
+        Placement(transformation(
           extent={{-10,10},{10,-10}},
           rotation=180,
           origin={-76,-190})));
@@ -1322,13 +1318,13 @@ package modelECMORespiratoryVR
     Physiolibrary.Fluid.Sensors.PartialPressure pO2Veins(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.Oxygen_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
+      redeclare package Medium = Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{-338,-174},{-318,-194}})));
     Physiolibrary.Fluid.Sensors.PartialPressure pCO2Veins(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.CarbonDioxide_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
-      annotation (Placement(transformation(
+      redeclare package Medium = Physiolibrary.Media.Blood) annotation (
+        Placement(transformation(
           extent={{-10,10},{10,-10}},
           rotation=0,
           origin={-320,-138})));
@@ -1377,12 +1373,12 @@ package modelECMORespiratoryVR
           rotation=0,
           origin={102,116})));
     Physiolibrary.Fluid.Components.VolumePump VVECMOpump(
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen,
+      redeclare package Medium = Physiolibrary.Media.Blood,
       useSolutionFlowInput=true,
       SolutionFlow=0)
       annotation (Placement(transformation(extent={{-202,-66},{-222,-46}})));
     Physiolibrary.Fluid.Components.VolumePump VAECMOpump(
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen,
+      redeclare package Medium = Physiolibrary.Media.Blood,
       useSolutionFlowInput=true,
       SolutionFlow(displayUnit="l/min"))
       annotation (Placement(transformation(extent={{-54,-66},{-34,-46}})));
@@ -1400,7 +1396,7 @@ package modelECMORespiratoryVR
         Medium = Physiolibrary.Media.Air, Conductance=SWEEP/100)
       annotation (Placement(transformation(extent={{-140,174},{-120,194}})));
     Physiolibrary.Fluid.Sensors.pH pH_Arteries(redeclare package Medium =
-          Physiolibrary.Media.BloodBySiggaardAndersen)
+          Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{-190,-142},{-170,-122}})));
     Modelica.Blocks.Sources.Constant Rotation(k=RPM)
       annotation (Placement(transformation(extent={{-340,56},{-320,76}})));
@@ -1483,13 +1479,13 @@ package modelECMORespiratoryVR
     Physiolibrary.Fluid.Sensors.PartialPressure pO2Lungs(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.Oxygen_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
+      redeclare package Medium = Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{-294,562},{-274,582}})));
     Physiolibrary.Fluid.Sensors.PartialPressure pCO2Lungs(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.CarbonDioxide_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
-      annotation (Placement(transformation(
+      redeclare package Medium = Physiolibrary.Media.Blood) annotation (
+        Placement(transformation(
           extent={{10,-10},{-10,10}},
           rotation=0,
           origin={-136,574})));
@@ -1502,7 +1498,7 @@ package modelECMORespiratoryVR
           Blood, Conductance=C_cirkulation*8)
       annotation (Placement(transformation(extent={{-106,464},{-86,484}})));
     Physiolibrary.Fluid.Components.ElasticVessel LungCapilars(
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen,
+      redeclare package Medium = Physiolibrary.Media.Blood,
       useSubstances=true,
       volume_start(displayUnit="l") = 0.00015,
       Compliance(displayUnit="ml/mmHg") = 3.0002463033826e-08,
@@ -1519,7 +1515,7 @@ package modelECMORespiratoryVR
                  Physiolibrary.Media.Air)
       annotation (Placement(transformation(extent={{-42,608},{-22,628}})));
     Physiolibrary.Fluid.Sensors.pH pH_Veins(redeclare package Medium =
-          Physiolibrary.Media.BloodBySiggaardAndersen)
+          Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{-218,-138},{-238,-118}})));
     Physiolibrary.Fluid.Sensors.FlowMeasure flowMeasureSweep(redeclare package
         Medium = Physiolibrary.Media.Air) annotation (Placement(transformation(
@@ -1542,10 +1538,10 @@ package modelECMORespiratoryVR
           displayUnit="l/min") = 0)
       annotation (Placement(transformation(extent={{-112,50},{-120,58}})));
     Physiolibrary.Fluid.Sensors.pH pH_LungA(redeclare package Medium =
-          Physiolibrary.Media.BloodBySiggaardAndersen)
+          Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{-420,432},{-400,452}})));
     Physiolibrary.Fluid.Sensors.pH pH_LungV(redeclare package Medium =
-          Physiolibrary.Media.BloodBySiggaardAndersen)
+          Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{86,430},{66,450}})));
     Physiolibrary.Fluid.Sensors.FlowMeasure flowMeasureECMO(redeclare package
         Medium = Blood) annotation (Placement(transformation(
@@ -1571,7 +1567,7 @@ package modelECMORespiratoryVR
         points={{-170,-164},{-170,-248.1},{-191.3,-248.1}},
         color={127,0,0},
         thickness=0.5));
-    connect(PressureCapilarsTissue.q_in, Tissue.q_in[3]) annotation (Line(
+    connect(PressureCapilarsTissue.port, Tissue.q_in[3]) annotation (Line(
         points={{-268,-234},{-190.433,-234},{-190.433,-248.1}},
         color={127,0,0},
         thickness=0.5));
@@ -1579,13 +1575,12 @@ package modelECMORespiratoryVR
             {-190,-300},{-190,-258}}, color={158,66,200}));
     connect(O2_left.port_a, pO2_tissue.port_a) annotation (Line(points={{-256,-300},
             {-234,-300},{-234,-270},{-256,-270}}, color={158,66,200}));
-    connect(pO2_tissue.referenceFluidPort, Tissue.q_in[4]) annotation (Line(
-        points={{-266,-260.2},{-266,-248},{-212,-248},{-212,-248.1},{-189.567,
-            -248.1}},
+    connect(pO2_tissue.port, Tissue.q_in[4]) annotation (Line(
+        points={{-266,-260.2},{-266,-248},{-212,-248},{-212,-248.1},{-189.567,-248.1}},
         color={127,0,0},
         thickness=0.5));
 
-    connect(pCO2_tissue.referenceFluidPort, Tissue.q_in[5]) annotation (Line(
+    connect(pCO2_tissue.port, Tissue.q_in[5]) annotation (Line(
         points={{-118,-260.2},{-118,-248.1},{-188.7,-248.1}},
         color={127,0,0},
         thickness=0.5));
@@ -1600,11 +1595,11 @@ package modelECMORespiratoryVR
     connect(pO2Arteries.port_a, Arteries.substances[2]) annotation (Line(points={{-86,
             -190},{-116,-190},{-116,-159}},
                                          color={158,66,200}));
-    connect(pO2Arteries.referenceFluidPort, Arteries.q_in[2]) annotation (Line(
+    connect(pO2Arteries.port, Arteries.q_in[2]) annotation (Line(
         points={{-76,-199.8},{-125.9,-199.8},{-125.9,-157.366}},
         color={127,0,0},
         thickness=0.5));
-    connect(pCO2Arteries.referenceFluidPort, Arteries.q_in[3]) annotation (Line(
+    connect(pCO2Arteries.port, Arteries.q_in[3]) annotation (Line(
         points={{-74,-153.8},{-74,-158.183},{-125.9,-158.183}},
         color={127,0,0},
         thickness=0.5));
@@ -1620,11 +1615,11 @@ package modelECMORespiratoryVR
         color={191,0,0},
         thickness=0.5));
 
-    connect(PressureVeins.q_in, Veins.q_in[2]) annotation (Line(
+    connect(PressureVeins.port, Veins.q_in[2]) annotation (Line(
         points={{-380,-212},{-250,-212},{-250,-160.514},{-256.1,-160.514}},
         color={127,0,0},
         thickness=0.5));
-    connect(pressureECMOAirTube.q_in, ECMOAirTube.q_in[1]) annotation (Line(
+    connect(pressureECMOAirTube.port, ECMOAirTube.q_in[1]) annotation (Line(
         points={{-140,206},{-188.05,206},{-188.05,183.9}},
         color={127,0,0},
         thickness=0.5));
@@ -1708,7 +1703,7 @@ package modelECMORespiratoryVR
       annotation (Line(points={{42,110},{90,110}},   color={0,0,127}));
     connect(product1.y, heartLeft.solutionFlow) annotation (Line(points={{113,116},
             {122,116},{122,-6},{15,-6}},  color={0,0,127}));
-    connect(pressureLungsVein.q_in, LungsVeins.q_in[3]) annotation (Line(
+    connect(pressureLungsVein.port, LungsVeins.q_in[3]) annotation (Line(
         points={{32,108},{32,88},{12.1,88},{12.1,440}},
         color={127,0,0},
         thickness=0.5));
@@ -1718,7 +1713,7 @@ package modelECMORespiratoryVR
                                                color={0,0,127}));
     connect(product4.y,VVECMOpump. solutionFlow) annotation (Line(points={{-203,
             -24},{-212,-24},{-212,-49}},              color={0,0,127}));
-    connect(pressureArterial.q_in, Arteries.q_in[5]) annotation (Line(
+    connect(pressureArterial.port, Arteries.q_in[5]) annotation (Line(
         points={{-118,-224},{-126,-224},{-126,-159.817},{-125.9,-159.817}},
         color={127,0,0},
         thickness=0.5));
@@ -1726,11 +1721,11 @@ package modelECMORespiratoryVR
       annotation (Line(points={{-65,38},{-38,38},{-38,-16}}, color={0,0,127}));
     connect(product3.y, VAECMOpump.solutionFlow)
       annotation (Line(points={{-44,-39},{-44,-49}}, color={0,0,127}));
-    connect(pressureOxygenator.q_in, ECMOBloodTube.q_in[1]) annotation (Line(
+    connect(pressureOxygenator.port, ECMOBloodTube.q_in[1]) annotation (Line(
         points={{-156,140},{-156,102.1},{-191.95,102.1}},
         color={127,0,0},
         thickness=0.5));
-    connect(pH_Arteries.referenceFluidPort, Arteries.q_in[6]) annotation (Line(
+    connect(pH_Arteries.port, Arteries.q_in[6]) annotation (Line(
         points={{-180,-141.8},{-180,-176},{-125.9,-176},{-125.9,-160.634}},
         color={127,0,0},
         thickness=0.5));
@@ -1739,13 +1734,12 @@ package modelECMORespiratoryVR
                                               color={0,0,127}));
     connect(ECMOFlowIntercept.y, add1.u1) annotation (Line(points={{-317,-10},{-288,
             -10},{-288,48},{-260,48}},  color={0,0,127}));
-    connect(pCO2Veins.referenceFluidPort, Veins.q_in[4]) annotation (Line(
+    connect(pCO2Veins.port, Veins.q_in[4]) annotation (Line(
         points={{-320,-128.2},{-272,-128.2},{-272,-162},{-256.1,-162}},
         color={127,0,0},
         thickness=0.5));
-    connect(pO2Veins.referenceFluidPort, Veins.q_in[5]) annotation (Line(
-        points={{-328,-174.2},{-320,-174.2},{-320,-170},{-256.1,-170},{-256.1,
-            -162.743}},
+    connect(pO2Veins.port, Veins.q_in[5]) annotation (Line(
+        points={{-328,-174.2},{-320,-174.2},{-320,-170},{-256.1,-170},{-256.1,-162.743}},
         color={127,0,0},
         thickness=0.5));
 
@@ -1804,7 +1798,7 @@ package modelECMORespiratoryVR
             584}},                           color={158,66,200}));
     connect(Alveoly.substances[2],CO2. gas_port) annotation (Line(points={{-212,
             606},{-212,588},{-186,588}},   color={158,66,200}));
-    connect(pressureCapilarsLungs.q_in, LungCapilars.q_in[1]) annotation (Line(
+    connect(pressureCapilarsLungs.port, LungCapilars.q_in[1]) annotation (Line(
         points={{-106,540},{-106,520},{-136,520},{-136,496},{-200,496},{-200,
             510},{-196.05,510},{-196.05,530.1}},
         color={127,0,0},
@@ -1814,15 +1808,14 @@ package modelECMORespiratoryVR
     connect(CO2.liquid_port, LungCapilars.substances[3]) annotation (Line(
           points={{-186,568},{-186,550},{-198,550},{-198,540}}, color={158,66,
             200}));
-    connect(pO2Lungs.referenceFluidPort, LungCapilars.q_in[2]) annotation (Line(
-        points={{-284,562.2},{-284,496},{-200,496},{-200,510},{-197.35,510},{
-            -197.35,530.1}},
+    connect(pO2Lungs.port, LungCapilars.q_in[2]) annotation (Line(
+        points={{-284,562.2},{-284,496},{-200,496},{-200,510},{-197.35,510},{-197.35,
+            530.1}},
         color={127,0,0},
         thickness=0.5));
-    connect(pCO2Lungs.referenceFluidPort, LungCapilars.q_in[2]) annotation (
-        Line(
-        points={{-136,564.2},{-136,494},{-200,494},{-200,510},{-197.35,510},{
-            -197.35,530.1}},
+    connect(pCO2Lungs.port, LungCapilars.q_in[2]) annotation (Line(
+        points={{-136,564.2},{-136,494},{-200,494},{-200,510},{-197.35,510},{-197.35,
+            530.1}},
         color={127,0,0},
         thickness=0.5));
 
@@ -1854,14 +1847,14 @@ package modelECMORespiratoryVR
         color={127,0,0},
         thickness=0.5));
 
-    connect(pressureAlveols.q_in, Alveoly.q_in[2]) annotation (Line(
+    connect(pressureAlveols.port, Alveoly.q_in[2]) annotation (Line(
         points={{-36,612},{-212,612},{-212,615.9}},
         color={127,0,0},
         thickness=0.5));
     connect(pH_Arteries.port_a, Arteries.substances[13]) annotation (Line(
           points={{-170,-132},{-116,-132},{-116,-159}},
           color={158,66,200}));
-    connect(pH_Veins.referenceFluidPort, Veins.q_in[6]) annotation (Line(
+    connect(pH_Veins.port, Veins.q_in[6]) annotation (Line(
         points={{-228,-137.8},{-228,-146},{-256.1,-146},{-256.1,-163.486}},
         color={127,0,0},
         thickness=0.5));
@@ -1885,16 +1878,17 @@ package modelECMORespiratoryVR
         color={127,0,0},
         thickness=0.5));
 
-    connect(pH_LungA.referenceFluidPort, LungsArteries.q_in[4]) annotation (Line(
-        points={{-410,432.2},{-410,408},{-372,408},{-372,424},{-372.1,424},{
-            -372.1,440.96}},
+    connect(pH_LungA.port, LungsArteries.q_in[4]) annotation (Line(
+        points={{-410,432.2},{-410,408},{-372,408},{-372,424},{-372.1,424},{-372.1,
+            440.96}},
         color={127,0,0},
         thickness=0.5));
 
-    connect(pH_LungV.referenceFluidPort, LungsVeins.q_in[5]) annotation (Line(
+    connect(pH_LungV.port, LungsVeins.q_in[5]) annotation (Line(
         points={{76,430.2},{76,414},{12,414},{12,424},{12.1,424},{12.1,437.92}},
         color={127,0,0},
         thickness=0.5));
+
     connect(pH_LungA.port_a, LungsArteries.substances[13])
       annotation (Line(points={{-400,442},{-382,442}}, color={158,66,200}));
     connect(pH_LungV.port_a, LungsVeins.substances[13])
@@ -1931,7 +1925,7 @@ package modelECMORespiratoryVR
         points={{-276,638},{-210.267,638},{-210.267,615.9}},
         color={127,0,0},
         thickness=0.5));
-    connect(pressureLungsArteries.q_in, LungsArteries.q_in[5]) annotation (Line(
+    connect(pressureLungsArteries.port, LungsArteries.q_in[5]) annotation (Line(
         points={{-382,498},{-382,439.92},{-372.1,439.92}},
         color={127,0,0},
         thickness=0.5));
@@ -2377,14 +2371,14 @@ package modelECMORespiratoryVR
     Modelica.Blocks.Math.Product product1
       annotation (Placement(transformation(extent={{-64,18},{-54,28}})));
   equation
-    connect(lungsPressureMeasure.
-                          q_in,lungs. q_in[1]) annotation (Line(
-     points={{72,2},{72,1.95},{41.9,1.95}},
+    connect(lungsPressureMeasure.port,
+                               lungs. q_in[1]) annotation (Line(
+     points={{76,-2},{76,-0.975},{41.9,-0.975}},
      color={127,0,0},
      thickness=0.5));
     connect(resistor.
               q_out,lungs. q_in[2]) annotation (Line(
-     points={{12,-16},{24,-16},{24,0.65},{41.9,0.65}},
+     points={{12,-16},{24,-16},{24,-0.325},{41.9,-0.325}},
      color={127,0,0},
      thickness=0.5));
     connect(flowMeasure.
@@ -2393,14 +2387,15 @@ package modelECMORespiratoryVR
      points={{-16,-16},{-8,-16}},
      color={127,0,0},
      thickness=0.5));
-    connect(pCO2.referenceFluidPort,lungs. q_in[3]) annotation (Line(
-        points={{24,-32.2},{24,-1.3},{41.9,-1.3},{41.9,-0.65}},
+    connect(pCO2.port, lungs.q_in[3]) annotation (Line(
+        points={{24,-32},{24,-1.3},{41.9,-1.3},{41.9,0.325}},
         color={127,0,0},
         thickness=0.5));
-    connect(pO2.referenceFluidPort,lungs. q_in[4]) annotation (Line(
-        points={{62,-30.2},{62,2},{60,2},{60,1.7333},{41.9,1.7333},{41.9,-1.95}},
+    connect(pO2.port, lungs.q_in[4]) annotation (Line(
+        points={{62,-30},{62,2},{60,2},{60,1.7333},{41.9,1.7333},{41.9,0.975}},
         color={127,0,0},
         thickness=0.5));
+
     connect(lungs.substances[Air.S.CO2],pCO2. port_a) annotation (Line(points={{32,0},{
             26,0},{26,-26},{38,-26},{38,-42},{34,-42}},color={158,66,200}));
     connect(lungs.substances[Air.S.O2],pO2. port_a) annotation (Line(points={{32,0},{
@@ -2817,13 +2812,13 @@ package modelECMORespiratoryVR
       parameter Physiolibrary.Types.HydraulicConductance C_cirkulation=1.250102626409427e-07
         *(1/3*(1 - Shunts))                          "Conductance of circulation [m3/(Pa.s)]";
       parameter Real Shunts=0.02;
-    Physiolibrary.Fluid.Interfaces.FluidPorts_a q_in(redeclare package Medium
-        = Blood) annotation (Placement(transformation(rotation=0, extent={{-209.5,
+    Physiolibrary.Fluid.Interfaces.FluidPorts_a q_in(redeclare package Medium =
+          Blood) annotation (Placement(transformation(rotation=0, extent={{-209.5,
               -163},{-150.5,-129}}),
                              iconTransformation(extent={{-209.5,-163},{-150.5,
               -129}})));
-    Physiolibrary.Fluid.Interfaces.FluidPorts_a q_in1(redeclare package Medium
-        = Blood) annotation (Placement(transformation(rotation=0, extent={{118.5,
+    Physiolibrary.Fluid.Interfaces.FluidPorts_a q_in1(redeclare package Medium =
+          Blood) annotation (Placement(transformation(rotation=0, extent={{118.5,
               -71},{177.5,-37}}),
                             iconTransformation(extent={{118.5,-71},{177.5,-37}})));
   equation
@@ -3390,7 +3385,7 @@ package modelECMORespiratoryVR
   model ECMOSimNoRegVentilatorVCFlat
     //Typy přenosového media
         replaceable package Blood =
-          Physiolibrary.Media.BloodBySiggaardAndersen annotation(choicesAllMatching=True);
+          Physiolibrary.Media.Blood                   annotation(choicesAllMatching=True);
       replaceable package Air =
           Physiolibrary.Media.Air annotation(choicesAllMatching=True);
 
@@ -3480,7 +3475,7 @@ package modelECMORespiratoryVR
       redeclare package Medium = Air) annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
           rotation=0,
-          origin={83,272})));
+          origin={87,272})));
     Physiolibrary.Fluid.Components.ElasticVessel Alveoly(
       redeclare package Medium = Air,
       useSubstances=true,
@@ -3488,6 +3483,7 @@ package modelECMORespiratoryVR
       Compliance(displayUnit="ml/mmHg") = 6.0004926067653e-07,
       ZeroPressureVolume(displayUnit="l") = 0.0013,
       ExternalPressure(displayUnit="mmHg") = 100791.72488574,
+      isExternalPressureAbsolute=true,
       nPorts=3) annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
           rotation=90,
@@ -3509,13 +3505,13 @@ package modelECMORespiratoryVR
     Physiolibrary.Fluid.Sensors.PartialPressure pO2Lungs(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.Oxygen_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
+      redeclare package Medium = Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{-207,152},{-187,172}})));
     Physiolibrary.Fluid.Sensors.PartialPressure pCO2Lungs(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.CarbonDioxide_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
-      annotation (Placement(transformation(
+      redeclare package Medium = Physiolibrary.Media.Blood) annotation (
+        Placement(transformation(
           extent={{10,-10},{-10,10}},
           rotation=0,
           origin={-49,164})));
@@ -3526,7 +3522,7 @@ package modelECMORespiratoryVR
           Blood, Conductance=C_cirkulation*8)
       annotation (Placement(transformation(extent={{-19,54},{1,74}})));
     Physiolibrary.Fluid.Components.ElasticVessel LungCapilars(
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen,
+      redeclare package Medium = Physiolibrary.Media.Blood,
       useSubstances=true,
       volume_start(displayUnit="l") = 0.00015,
       Compliance(displayUnit="ml/mmHg") = 3.0002463033826e-08,
@@ -3549,10 +3545,10 @@ package modelECMORespiratoryVR
           rotation=0,
           origin={-11,228})));
     Physiolibrary.Fluid.Sensors.pH pH_LungA(redeclare package Medium =
-          Physiolibrary.Media.BloodBySiggaardAndersen)
+          Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{-333,22},{-313,42}})));
     Physiolibrary.Fluid.Sensors.pH pH_LungV(redeclare package Medium =
-          Physiolibrary.Media.BloodBySiggaardAndersen)
+          Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{173,20},{153,40}})));
     Physiolibrary.Fluid.Sensors.PressureMeasure pressureLungsArteries(redeclare
         package Medium = Blood)
@@ -3595,7 +3591,7 @@ package modelECMORespiratoryVR
           rotation=180,
           origin={-146,-196})));
     Physiolibrary.Fluid.Components.ElasticVessel Tissue(
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen,
+      redeclare package Medium = Physiolibrary.Media.Blood,
       useSubstances=true,
       volume_start(displayUnit="l") = 0.0003,
       useThermalPort=true,
@@ -3625,29 +3621,29 @@ package modelECMORespiratoryVR
     Physiolibrary.Fluid.Sensors.PartialPressure pO2_tissue(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.Oxygen_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
+      redeclare package Medium = Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{-202,-292},{-182,-312}})));
     Physiolibrary.Fluid.Sensors.PartialPressure pCO2_tissue(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.CarbonDioxide_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
-      annotation (Placement(transformation(
+      redeclare package Medium = Physiolibrary.Media.Blood) annotation (
+        Placement(transformation(
           extent={{10,10},{-10,-10}},
           rotation=0,
           origin={-44,-302})));
     Physiolibrary.Fluid.Sensors.PartialPressure pCO2Arteries(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.CarbonDioxide_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
-      annotation (Placement(transformation(
+      redeclare package Medium = Physiolibrary.Media.Blood) annotation (
+        Placement(transformation(
           extent={{-10,10},{10,-10}},
           rotation=180,
           origin={0,-176})));
     Physiolibrary.Fluid.Sensors.PartialPressure pO2Arteries(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.Oxygen_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
-      annotation (Placement(transformation(
+      redeclare package Medium = Physiolibrary.Media.Blood) annotation (
+        Placement(transformation(
           extent={{-10,10},{10,-10}},
           rotation=180,
           origin={-2,-222})));
@@ -3683,13 +3679,13 @@ package modelECMORespiratoryVR
     Physiolibrary.Fluid.Sensors.PartialPressure pO2Veins(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.Oxygen_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
+      redeclare package Medium = Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{-264,-206},{-244,-226}})));
     Physiolibrary.Fluid.Sensors.PartialPressure pCO2Veins(
       redeclare package stateOfMatter = Chemical.Interfaces.IdealGas,
       substanceData=Chemical.Substances.CarbonDioxide_gas(),
-      redeclare package Medium = Physiolibrary.Media.BloodBySiggaardAndersen)
-      annotation (Placement(transformation(
+      redeclare package Medium = Physiolibrary.Media.Blood) annotation (
+        Placement(transformation(
           extent={{-10,10},{10,-10}},
           rotation=0,
           origin={-246,-170})));
@@ -3711,10 +3707,10 @@ package modelECMORespiratoryVR
           rotation=0,
           origin={180,-28})));
     Physiolibrary.Fluid.Sensors.pH pH_Arteries(redeclare package Medium =
-          Physiolibrary.Media.BloodBySiggaardAndersen)
+          Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{-116,-174},{-96,-154}})));
     Physiolibrary.Fluid.Sensors.pH pH_Veins(redeclare package Medium =
-          Physiolibrary.Media.BloodBySiggaardAndersen)
+          Physiolibrary.Media.Blood)
       annotation (Placement(transformation(extent={{-144,-170},{-164,-150}})));
     Physiolibrary.Fluid.Components.ElasticVessel lungs(
       redeclare package Medium = Air,
@@ -3723,7 +3719,6 @@ package modelECMORespiratoryVR
       volume_start=LungsAirVolume_initial,
       use_concentration_start=false,
       massFractions_start=Air.reference_X,
-      EnthalpyNotUsed=false,
       ZeroPressureVolume=FunctionalResidualCapacity,
       Compliance=TotalCompliance,
       useExternalPressureInput=false,
@@ -3737,7 +3732,6 @@ package modelECMORespiratoryVR
       annotation (Placement(transformation(extent={{287,278},{307,298}})));
     Physiolibrary.Fluid.Components.Resistor resistor(
       redeclare package Medium = Air,
-      EnthalpyNotUsed=false,
       Resistance=TotalResistance)
       annotation (Placement(transformation(extent={{371,212},{391,232}})));
     Physiolibrary.Types.Constants.FrequencyConst frequency(k=RR)
@@ -3773,34 +3767,22 @@ package modelECMORespiratoryVR
   equation
 
     connect(flowMeasureAlveols.q_in,Alveoly. q_in[1]) annotation (Line(
-        points={{-81,228},{-123,228},{-123,205.9},{-126.733,205.9}},
+        points={{-81,228},{-123,228},{-123,205.9},{-124.133,205.9}},
         color={127,0,0},
         thickness=0.5));
-    connect(Alveoly.substances[1],O2. gas_port) annotation (Line(points={{-125,196},
-            {-125,182},{-133,182},{-133,180},{-147,180},{-147,174},{-143,174}},
-                                             color={158,66,200}));
-    connect(Alveoly.substances[2],CO2. gas_port) annotation (Line(points={{-125,196},
-            {-125,178},{-99,178}},         color={158,66,200}));
-    connect(O2.liquid_port,LungCapilars. substances[2]) annotation (Line(points={{-143,
-            154},{-143,140},{-111,140},{-111,130}},       color={158,66,200}));
-    connect(CO2.liquid_port,LungCapilars. substances[3]) annotation (Line(
-          points={{-99,158},{-99,140},{-111,140},{-111,130}},   color={158,66,
-            200}));
-    connect(O2.liquid_port,pO2Lungs. port_a) annotation (Line(points={{-143,154},{
-            -143,140},{-167,140},{-167,162},{-187,162}},  color={158,66,200}));
     connect(CO2.liquid_port,pCO2Lungs. port_a) annotation (Line(points={{-99,158},
-            {-99,140},{-73,140},{-73,164},{-59,164}},                     color=
+            {-99,140},{-71,140},{-71,164},{-59,164}},                     color=
            {158,66,200}));
     connect(conductor4.q_out,LungCapilars. q_in[2]) annotation (Line(
-        points={{-169,60},{-111,60},{-111,100},{-111,120.1},{-109.96,120.1}},
+        points={{-169,60},{-111,60},{-111,100},{-111,120.1},{-111.52,120.1}},
         color={127,0,0},
         thickness=0.5));
     connect(conductor5.q_in,LungCapilars. q_in[2]) annotation (Line(
-        points={{-19,64},{-113,64},{-113,102},{-109.96,102},{-109.96,120.1}},
+        points={{-19,64},{-113,64},{-113,102},{-111.52,102},{-111.52,120.1}},
         color={127,0,0},
         thickness=0.5));
     connect(conductor4.q_in,LungsArteries. q_in[3]) annotation (Line(
-        points={{-189,60},{-285,60},{-285,30},{-285.1,30},{-285.1,32.4333}},
+        points={{-189,60},{-285,60},{-285,30},{-285.1,30},{-285.1,31.7833}},
         color={127,0,0},
         thickness=0.5));
     connect(conductor5.q_out,LungsVeins. q_in[4]) annotation (Line(
@@ -3815,16 +3797,12 @@ package modelECMORespiratoryVR
         points={{-21,228},{-61,228}},
         color={127,0,0},
         thickness=0.5));
-    connect(pH_LungA.port_a,LungsArteries. substances[13])
-      annotation (Line(points={{-313,32},{-295,32}},   color={158,66,200}));
-    connect(pH_LungV.port_a,LungsVeins. substances[13])
-      annotation (Line(points={{153,30},{109,30}}, color={158,66,200}));
     connect(conductor3.q_out,Alveoly. q_in[2]) annotation (Line(
         points={{-189,228},{-125,228},{-125,205.9}},
         color={127,0,0},
         thickness=0.5));
     connect(flowMeasureAlveols1.q_out,MinuteVolume. q_in) annotation (Line(
-        points={{47,272},{73,272}},
+        points={{47,272},{77,272}},
         color={127,0,0},
         thickness=0.5));
     connect(conductor6.q_out,flowMeasureAlveols1. q_in) annotation (Line(
@@ -3840,32 +3818,32 @@ package modelECMORespiratoryVR
         color={127,0,0},
         thickness=0.5));
     connect(resistor1.q_in,Arteries. q_in[1]) annotation (Line(
-        points={{-76,-196},{-51.9,-196},{-51.9,-188.617}},
+        points={{-76,-196},{-51.9,-196},{-51.9,-192.192}},
         color={127,0,0},
         thickness=0.5));
     connect(resistor2.q_in,Tissue. q_in[1]) annotation (Line(
-        points={{-136,-196},{-136,-280.1},{-118.08,-280.1}},
+        points={{-136,-196},{-136,-280.1},{-114.96,-280.1}},
         color={127,0,0},
         thickness=0.5));
     connect(resistor1.q_out,Tissue. q_in[2]) annotation (Line(
-        points={{-96,-196},{-96,-280.1},{-117.04,-280.1}},
+        points={{-96,-196},{-96,-280.1},{-115.48,-280.1}},
         color={127,0,0},
         thickness=0.5));
-    connect(O2_left.port_a,Tissue. substances[2]) annotation (Line(points={{-182,-332},
+    connect(O2_left.port_a,Tissue. substances[Blood.i("O2")]) annotation (Line(points={{-182,-332},
             {-116,-332},{-116,-290}}, color={158,66,200}));
     connect(O2_left.port_a,pO2_tissue. port_a) annotation (Line(points={{-182,-332},
             {-160,-332},{-160,-302},{-182,-302}}, color={158,66,200}));
-    connect(CO2_in.port_b,Tissue. substances[3]) annotation (Line(points={{-56,-332},
+    connect(CO2_in.port_b,Tissue. substances[Blood.i("CO2")]) annotation (Line(points={{-56,-332},
             {-116,-332},{-116,-290}}, color={158,66,200}));
     connect(CO2_in.port_b,pCO2_tissue. port_a) annotation (Line(points={{-56,-332},
             {-80,-332},{-80,-302},{-54,-302}},    color={158,66,200}));
     connect(resistor2.q_out,Veins. q_in[1]) annotation (Line(
-        points={{-156,-196},{-182.1,-196},{-182.1,-191.833}},
+        points={{-156,-196},{-182.1,-196},{-182.1,-195.083}},
         color={127,0,0},
         thickness=0.5));
-    connect(pO2Arteries.port_a,Arteries. substances[2]) annotation (Line(points={{-12,
+    connect(pO2Arteries.port_a,Arteries. substances[Blood.i("O2")]) annotation (Line(points={{-12,
             -222},{-42,-222},{-42,-191}},color={158,66,200}));
-    connect(pCO2Arteries.port_a,Arteries. substances[3])
+    connect(pCO2Arteries.port_a,Arteries. substances[Blood.i("CO2")])
       annotation (Line(points={{-10,-176},{-42,-176},{-42,-191}},
                                                            color={158,66,200}));
     connect(BodyHeat.port,conductor. q_in) annotation (Line(
@@ -3873,11 +3851,11 @@ package modelECMORespiratoryVR
         color={191,0,0},
         thickness=0.5));
     connect(conductor.q_out,Tissue. heatPort) annotation (Line(
-        points={{-98,-372},{-96,-372},{-96,-290},{-105.8,-290},{-105.8,-286}},
+        points={{-98,-372},{-96,-372},{-96,-290},{-106,-290},{-106,-286}},
         color={191,0,0},
         thickness=0.5));
     connect(heartRight.q_in,Veins. q_in[2]) annotation (Line(
-        points={{-294,-164},{-294,-192.7},{-182.1,-192.7}},
+        points={{-294,-164},{-294,-194.65},{-182.1,-194.65}},
         color={127,0,0},
         thickness=0.5));
     connect(heartLeft.q_out,flowMeasureCardiacOutput. q_in) annotation (Line(
@@ -3897,27 +3875,21 @@ package modelECMORespiratoryVR
     connect(product1.y,heartLeft. solutionFlow) annotation (Line(points={{191,-28},
             {200,-28},{200,-150},{93,-150}},
                                           color={0,0,127}));
-    connect(pO2Veins.port_a,Veins. substances[2]) annotation (Line(points={{-244,-216},
+    connect(pO2Veins.port_a,Veins. substances[Blood.i("O2")]) annotation (Line(points={{-244,-216},
             {-230,-216},{-230,-214},{-192,-214},{-192,-194}}, color={158,66,200}));
-    connect(pCO2Veins.port_a,Veins. substances[3]) annotation (Line(points={{-236,
+    connect(pCO2Veins.port_a,Veins. substances[Blood.i("CO2")]) annotation (Line(points={{-236,
             -170},{-220,-170},{-220,-176},{-192,-176},{-192,-194}}, color={158,66,
             200}));
-    connect(pH_Arteries.port_a,Arteries. substances[13]) annotation (Line(
-          points={{-96,-164},{-42,-164},{-42,-191}},
-          color={158,66,200}));
-    connect(pH_Veins.port_a,Veins. substances[13]) annotation (Line(points={{-164,
-            -160},{-192,-160},{-192,-194}},                              color=
-            {158,66,200}));
     connect(StarlingSlopeLeft.y,product1. u1)
       annotation (Line(points={{139,-22},{168,-22}},
                                                    color={0,0,127}));
     connect(heartRight.q_out, LungsArteries.q_in[4]) annotation (Line(
-        points={{-294,-144},{-294,0},{-285.1,0},{-285.1,31.5667}},
+        points={{-294,-144},{-294,0},{-285.1,0},{-285.1,32.2167}},
         color={127,0,0},
         thickness=0.5));
     connect(heartLeft.q_in, LungsVeins.q_in[5]) annotation (Line(
         points={{86,-140},{84,-140},{84,12},{96,12},{96,24},{99.1,24},{99.1,
-            29.2571}},
+            30.3714}},
         color={127,0,0},
         thickness=0.5));
 
@@ -3931,7 +3903,7 @@ package modelECMORespiratoryVR
         thickness=0.5));
     connect(resistor.
               q_out,lungs. q_in[1]) annotation (Line(
-     points={{391,222},{403,222},{403,239.3},{420.9,239.3}},
+     points={{391,222},{403,222},{403,237.35},{420.9,237.35}},
      color={127,0,0},
      thickness=0.5));
     connect(flowMeasure.
@@ -3977,97 +3949,118 @@ package modelECMORespiratoryVR
         points={{295,153},{289,153},{289,118},{331,118},{331,154}},
         color={127,0,0},
         thickness=0.5));
-    connect(Alveoly.q_in[3], pressureAlveols.q_in) annotation (Line(
-        points={{-123.267,205.9},{-35.5,205.9},{-35.5,202},{51,202}},
+    connect(Alveoly.q_in[3],pressureAlveols.port)  annotation (Line(
+        points={{-125.867,205.9},{-35.5,205.9},{-35.5,198},{55,198}},
         color={127,0,0},
         thickness=0.5));
-    connect(LungCapilars.q_in[3], pressureCapilarsLungs.q_in) annotation (Line(
-        points={{-111,120.1},{-64.5,120.1},{-64.5,130},{-19,130}},
+    connect(LungCapilars.q_in[3],pressureCapilarsLungs.port)  annotation (Line(
+        points={{-111,120.1},{-64.5,120.1},{-64.5,126},{-15,126}},
         color={127,0,0},
         thickness=0.5));
-    connect(pressureLungsArteries.q_in, LungsArteries.q_in[5]) annotation (Line(
-        points={{-295,88},{-292,88},{-292,52},{-285.1,52},{-285.1,30.7}},
+    connect(pressureLungsArteries.port, LungsArteries.q_in[5]) annotation (Line(
+        points={{-291,84},{-292,84},{-292,52},{-285.1,52},{-285.1,32.65}},
         color={127,0,0},
         thickness=0.5));
-    connect(pressureLungsVein.q_in, LungsVeins.q_in[6]) annotation (Line(
-        points={{110,-36},{84,-36},{84,12},{96,12},{96,24},{99.1,24},{99.1,
-            28.5143}},
-        color={127,0,0},
-        thickness=0.5));
-
-    connect(LungsVeins.q_in[7], pH_LungV.referenceFluidPort) annotation (Line(
-        points={{99.1,27.7714},{99.1,6},{163,6},{163,20.2}},
-        color={127,0,0},
-        thickness=0.5));
-    connect(pH_LungA.referenceFluidPort, LungsArteries.q_in[6]) annotation (Line(
-        points={{-323,22.2},{-323,8},{-285.1,8},{-285.1,29.8333}},
-        color={127,0,0},
-        thickness=0.5));
-    connect(pO2Lungs.referenceFluidPort, LungCapilars.q_in[4]) annotation (Line(
-        points={{-197,152.2},{-197,120.1},{-112.04,120.1}},
-        color={127,0,0},
-        thickness=0.5));
-    connect(pCO2Lungs.referenceFluidPort, LungCapilars.q_in[5]) annotation (Line(
-        points={{-49,154.2},{-49,120.1},{-113.08,120.1}},
-        color={127,0,0},
-        thickness=0.5));
-    connect(Veins.q_in[3], pH_Veins.referenceFluidPort) annotation (Line(
-        points={{-182.1,-193.567},{-182,-193.567},{-182,-169.8},{-154,-169.8}},
-        color={127,0,0},
-        thickness=0.5));
-    connect(pCO2Veins.referenceFluidPort, Veins.q_in[4]) annotation (Line(
-        points={{-246,-160.2},{-246,-154},{-182.1,-154},{-182.1,-194.433}},
-        color={127,0,0},
-        thickness=0.5));
-    connect(pO2Veins.referenceFluidPort, Veins.q_in[5]) annotation (Line(
-        points={{-254,-206.2},{-220,-206.2},{-220,-208},{-182.1,-208},{-182.1,-195.3}},
+    connect(pressureLungsVein.port, LungsVeins.q_in[6]) annotation (Line(
+        points={{114,-40},{84,-40},{84,12},{96,12},{96,24},{99.1,24},{99.1,
+            30.7429}},
         color={127,0,0},
         thickness=0.5));
 
-    connect(pH_Arteries.referenceFluidPort, Arteries.q_in[2]) annotation (Line(
-        points={{-106,-173.8},{-106,-189.57},{-51.9,-189.57}},
+    connect(LungsVeins.q_in[7], pH_LungV.port) annotation (Line(
+        points={{99.1,31.1143},{99.1,6},{163,6},{163,20}},
         color={127,0,0},
         thickness=0.5));
-    connect(pO2Arteries.referenceFluidPort, Arteries.q_in[3]) annotation (Line(
-        points={{-2,-231.8},{-26,-231.8},{-26,-236},{-51.9,-236},{-51.9,
-            -190.523}},
+    connect(pH_LungA.port, LungsArteries.q_in[6]) annotation (Line(
+        points={{-323,22},{-323,8},{-285.1,8},{-285.1,33.0833}},
+        color={127,0,0},
+        thickness=0.5));
+    connect(pO2Lungs.port, LungCapilars.q_in[4]) annotation (Line(
+        points={{-197,152},{-197,120.1},{-110.48,120.1}},
+        color={127,0,0},
+        thickness=0.5));
+    connect(pCO2Lungs.port, LungCapilars.q_in[5]) annotation (Line(
+        points={{-49,154},{-49,120.1},{-109.96,120.1}},
+        color={127,0,0},
+        thickness=0.5));
+    connect(Veins.q_in[3], pH_Veins.port) annotation (Line(
+        points={{-182.1,-194.217},{-182,-194.217},{-182,-170},{-154,-170}},
+        color={127,0,0},
+        thickness=0.5));
+    connect(pCO2Veins.port, Veins.q_in[4]) annotation (Line(
+        points={{-246,-160},{-246,-154},{-182.1,-154},{-182.1,-193.783}},
+        color={127,0,0},
+        thickness=0.5));
+    connect(pO2Veins.port, Veins.q_in[5]) annotation (Line(
+        points={{-254,-206},{-220,-206},{-220,-208},{-182.1,-208},{-182.1,
+            -193.35}},
         color={127,0,0},
         thickness=0.5));
 
-    connect(pCO2Arteries.referenceFluidPort, Arteries.q_in[4]) annotation (Line(
-        points={{0,-185.8},{0,-191.477},{-51.9,-191.477}},
+    connect(pH_Arteries.port, Arteries.q_in[2]) annotation (Line(
+        points={{-106,-174},{-106,-191.715},{-51.9,-191.715}},
+        color={127,0,0},
+        thickness=0.5));
+    connect(pO2Arteries.port, Arteries.q_in[3]) annotation (Line(
+        points={{-2,-232},{-26,-232},{-26,-236},{-51.9,-236},{-51.9,-191.238}},
+        color={127,0,0},
+        thickness=0.5));
+
+    connect(pCO2Arteries.port, Arteries.q_in[4]) annotation (Line(
+        points={{0,-186},{0,-190.762},{-51.9,-190.762}},
         color={127,0,0},
         thickness=0.5));
     connect(flowMeasureCardiacOutput.q_out, Arteries.q_in[5]) annotation (Line(
-        points={{86,-192},{18,-192},{18,-192.43},{-51.9,-192.43}},
+        points={{86,-192},{18,-192},{18,-190.285},{-51.9,-190.285}},
         color={127,0,0},
         thickness=0.5));
-    connect(pCO2_tissue.referenceFluidPort, Tissue.q_in[3]) annotation (Line(
-        points={{-44,-292.2},{-44,-280.1},{-116,-280.1}},
+    connect(pCO2_tissue.port, Tissue.q_in[3]) annotation (Line(
+        points={{-44,-292},{-44,-280.1},{-116,-280.1}},
         color={127,0,0},
         thickness=0.5));
-    connect(pO2_tissue.referenceFluidPort, Tissue.q_in[4]) annotation (Line(
-        points={{-192,-292.2},{-194,-292.2},{-194,-280.1},{-114.96,-280.1}},
+    connect(pO2_tissue.port, Tissue.q_in[4]) annotation (Line(
+        points={{-192,-292},{-194,-292},{-194,-280.1},{-116.52,-280.1}},
         color={127,0,0},
         thickness=0.5));
-    connect(PressureCapilarsTissue.q_in, Tissue.q_in[5]) annotation (Line(
-        points={{-194,-266},{-154,-266},{-154,-268},{-113.92,-268},{-113.92,-280.1}},
+    connect(PressureCapilarsTissue.port, Tissue.q_in[5]) annotation (Line(
+        points={{-198,-270},{-154,-270},{-154,-268},{-117.04,-268},{-117.04,
+            -280.1}},
         color={127,0,0},
         thickness=0.5));
 
-    connect(pressureArterial.q_in, Arteries.q_in[6]) annotation (Line(
-        points={{-44,-256},{-51.9,-256},{-51.9,-193.383}},
+    connect(pressureArterial.port, Arteries.q_in[6]) annotation (Line(
+        points={{-40,-260},{-51.9,-260},{-51.9,-189.808}},
         color={127,0,0},
         thickness=0.5));
-    connect(PressureVeins.q_in, Veins.q_in[6]) annotation (Line(
-        points={{-306,-244},{-182.1,-244},{-182.1,-196.167}},
+    connect(PressureVeins.port, Veins.q_in[6]) annotation (Line(
+        points={{-310,-248},{-182.1,-248},{-182.1,-192.917}},
         color={127,0,0},
         thickness=0.5));
-    connect(lungs.q_in[2], lungsPressureMeasure.q_in) annotation (Line(
-        points={{420.9,236.7},{400,236.7},{400,254},{448,254},{448,262},{451,262},
-            {451,244}},
+    connect(lungs.q_in[2],lungsPressureMeasure.port)  annotation (Line(
+        points={{420.9,238.65},{400,238.65},{400,254},{448,254},{448,262},{455,
+            262},{455,240}},
         color={127,0,0},
         thickness=0.5));
+    connect(LungsVeins.substances[Blood.i("H+")], pH_LungV.port_a)
+      annotation (Line(points={{109,30},{153,30}}, color={158,66,200}));
+    connect(pH_LungA.port_a, LungsArteries.substances[Blood.i("H+")])
+      annotation (Line(points={{-313,32},{-295,32}}, color={158,66,200}));
+    connect(pH_Veins.port_a, Veins.substances[Blood.i("H+")]) annotation (Line(
+          points={{-164,-160},{-192,-160},{-192,-194}}, color={158,66,200}));
+    connect(pH_Arteries.port_a, Arteries.substances[Blood.i("H+")]) annotation (
+        Line(points={{-96,-164},{-42,-164},{-42,-191}}, color={158,66,200}));
+    connect(O2.liquid_port, LungCapilars.substances[Blood.i("O2")]) annotation (
+        Line(points={{-143,154},{-143,144},{-111,144},{-111,130}}, color={158,66,200}));
+    connect(pO2Lungs.port_a, LungCapilars.substances[Blood.i("O2")]) annotation (
+        Line(points={{-187,162},{-160,162},{-160,144},{-111,144},{-111,130}},
+          color={158,66,200}));
+    connect(LungCapilars.substances[Blood.i("CO2")], CO2.liquid_port) annotation (
+       Line(points={{-111,130},{-111,158},{-99,158}}, color={158,66,200}));
+    connect(Alveoly.substances[Air.i("O2")], O2.gas_port) annotation (Line(
+          points={{-125,196},{-143,196},{-143,174}}, color={158,66,200}));
+    connect(CO2.gas_port, Alveoly.substances[Air.i("CO2")]) annotation (Line(
+          points={{-99,178},{-100,178},{-100,196},{-125,196}}, color={158,66,
+            200}));
     annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-400,-400},
               {580,340}})), Diagram(coordinateSystem(preserveAspectRatio=false,
             extent={{-400,-400},{580,340}}), graphics={
@@ -4107,5 +4100,5 @@ package modelECMORespiratoryVR
   annotation (uses(
       Modelica(version="4.0.0"),
       Chemical(version="1.4.0"),
-      Physiolibrary(version="3.0.0-alpha11")), version="1");
+      Physiolibrary(version="3.0.0-beta1")),   version="2");
 end modelECMORespiratoryVR;
